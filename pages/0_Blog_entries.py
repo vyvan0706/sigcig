@@ -32,3 +32,4 @@ def set_bg_hack_url():
          unsafe_allow_html=True
      )
 set_bg_hack_url()
+tab1,tab2,tab3=st.tabs(['Blog1','Blog2','Blog3'])
