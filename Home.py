@@ -1,5 +1,6 @@
 import streamlit as st
 import base64
+import time
 from PIL import Image
 from streamlit_extras.buy_me_a_coffee import button
 from streamlit_extras.switch_page_button import switch_page
