@@ -21,19 +21,6 @@ st.markdown(
             """,
         unsafe_allow_html=True,
     )
-def set_bg_hack_url():
-    st.markdown(
-         f"""
-         <style>
-         .stApp {{
-             background: url("https://images.rawpixel.com/image_800/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIyLTA1L3Vwd2s2MTg4NzQxMi13aWtpbWVkaWEtaW1hZ2Uta293ZDkxdWQuanBn.jpg");
-             background-size: cover
-         }}
-         </style>
-         """,
-         unsafe_allow_html=True
-     )
-set_bg_hack_url()
 st.title('_Blog_ by :blue[lev] :sunglasses:')
 st.write('1 + 1 = ')
 def example():
