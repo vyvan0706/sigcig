@@ -23,13 +23,14 @@ st.markdown(
             """,
         unsafe_allow_html=True,
     )
-st.title('_Blog_ by :blue[lev] :sunglasses:')
+st.title(':black[_Blog_ by] :blue[lev] :sunglasses:')
 _LOREM_IPSUM ='''Hello, I'm Lev. I'm on a journey, traveling from place to place, seeking something elusive yet essential. This blog will document my experiences and reflections along the way. Join me as I navigate through the twists and turns of life's unpredictable road.'''
 def stream_data():
     for word in _LOREM_IPSUM.split():
         yield word + " "
-        time.sleep(0.5)
+        time.sleep(0.05)
 st.write_stream(stream_data)
+st.image('anh2.png',caption='This is me!')
 def example2():
     want_to_contribute = st.button("Blog entries")
     if want_to_contribute:
