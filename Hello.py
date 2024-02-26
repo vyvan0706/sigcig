@@ -1,6 +1,10 @@
 import streamlit as st
 import base64
 from PIL import Image
+st.set_page_config(
+    page_title="Home",
+    page_icon="👋",
+)
 st.markdown(
         f"""
             <style>
