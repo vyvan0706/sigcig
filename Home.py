@@ -23,16 +23,18 @@ st.markdown(
             """,
         unsafe_allow_html=True,
     )
-st.title(':black[_Blog_ by] :blue[lev] :sunglasses:')
+st.title('_Blog_ by :blue[lev] :sunglasses:')
+#st.markdown("<h1 style='color: black;'><span style='color: black;font-style: italic;'>Blog</span> <span style='color: black;'>by</span> <span style='color: blue;'>lev</span> 😎</h1>", unsafe_allow_html=True)
+
 _LOREM_IPSUM ='''Hello, I'm Lev. I'm on a journey, traveling from place to place, seeking something elusive yet essential. This blog will document my experiences and reflections along the way. Join me as I navigate through the twists and turns of life's unpredictable road.'''
 def stream_data():
     for word in _LOREM_IPSUM.split():
         yield word + " "
         time.sleep(0.05)
 st.write_stream(stream_data)
-st.image('anh2.png',caption='This is me!')
+st.image('anh2.png',caption='This is me!',width=300 )
 def example2():
     want_to_contribute = st.button("Blog entries")
     if want_to_contribute:
         switch_page("Blog entries")
-example2 ()
+example2()
