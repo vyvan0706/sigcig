@@ -5,7 +5,8 @@ import streamlit as st
 st.set_page_config(
     page_title="Home",
     page_icon="👋",
-    layout= 'wide'
+    layout= 'wide',
+    initial_sidebar_state='collapsed'
 )
 
 hide_streamlit_style = """
@@ -107,7 +108,7 @@ html {
 .word {
   margin: auto;
   position:absolute;
-  top:190px;
+  top:250px;
   left:80px;
   color: black;
   font: 700 normal 5em 'Eb Garamond';

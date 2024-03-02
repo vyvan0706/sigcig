@@ -31,7 +31,7 @@ body {
    letter-spacing: 1px;
    stroke: #EBE3D5;
    font-size: 40px;
-   stroke-width: 1;
+   stroke-width: 2;
   
    animation: textAnimate 5s infinite alternate;
    

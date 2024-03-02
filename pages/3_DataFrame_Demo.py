@@ -14,8 +14,8 @@ html {
 
 .word {
   margin: auto;
-  top: 370px; /* Adjust the top position as needed */
-  left: 200px;
+  top: 0px; /* Adjust the top position as needed */
+  left: 0px;
   color: black;
   font: 700 normal 2.5em 'Eb Garamond';
   # text-shadow: 5px 2px #222324, 2px 4px #222324, 3px 5px #222324;
