@@ -2,13 +2,15 @@ import streamlit as st
 import base64
 from PIL import Image
 import streamlit as st
+import streamlit.components.v1 as components
+#layout for page
 st.set_page_config(
     page_title="Home",
     page_icon="👋",
     layout= 'wide',
     initial_sidebar_state='collapsed'
 )
-
+#hide header footer
 hide_streamlit_style = """
             <style>
             #MainMenu {visibility: hidden;}
@@ -17,13 +19,14 @@ hide_streamlit_style = """
             </style>
             """
 st.markdown(hide_streamlit_style, unsafe_allow_html=True) 
-
+#reduce header height
 reduce_header_height_style = """
     <style>
         div.block-container {padding-top:0.0000000001rem;}
     </style>
 """
 st.markdown(reduce_header_height_style, unsafe_allow_html=True)
+#background
 st.markdown(
          f"""
          <style>
@@ -37,8 +40,9 @@ st.markdown(
      )
 
 
-
+#columns
 col1, col23, col4,col5,col6 = st.columns([2,17,3,3,3])
+#set logo
 st.markdown(
     """
     <div style="position: fixed; top: 63px; left: 64px;">
@@ -47,7 +51,7 @@ st.markdown(
     """,
     unsafe_allow_html=True
 )
-
+#for col 1
 with col1:
     with open('wave.css') as css:
         files = css.read()
@@ -81,17 +85,21 @@ with col1:
         """,
         unsafe_allow_html=True
     )
+#for col5
 with col5:
-    navigation_link = '<a class="navigation-link" href="/your-navigation-page" style="color: #EBE3D5;top: 63px; right: 400px;"><span style="color: #F55F5F;">&#8226;</span> about</a>'
+    navigation_link = '<a id="about-link" class="navigation-link" href="/your-about-page" style="color: #EBE3D5;top: 63px; right: 400px;"><span style="color: #F55F5F;">&#8226;</span> about</a>'
     st.markdown(navigation_link, unsafe_allow_html=True)
 
 with col6:
-    navigation_link2 = '<a class="navigation-link" href="/your-navigation-page" style="color: #EBE3D5;top: 63px; right: 275px;"><span style="color: #F55F5F;">&#8226;</span> blog</a>'
+    navigation_link2 = '<a id="blog-link" class="navigation-link" href="/your-blog-page" style="color: #EBE3D5;top: 63px; right: 275px;"><span style="color: #F55F5F;">&#8226;</span> blog</a>'
     st.markdown(navigation_link2, unsafe_allow_html=True)
-navigation_link = '<a class="navigation-link" href="/your-navigation-page" style="color: #EBE3D5;top: 63px; right: 120px;"><span style="color: #F55F5F;">&#8226;</span> contact</a>'
-st.markdown(navigation_link, unsafe_allow_html=True)
-import streamlit.components.v1 as components
-# Define the HTML content00
+
+navigation_link3 = '<a id="contact-link" class="navigation-link" href="/your-contact-page" style="color: #EBE3D5;top: 63px; right: 120px;"><span style="color: #F55F5F;">&#8226;</span> contact</a>'
+st.markdown(navigation_link3, unsafe_allow_html=True)
+
+
+
+# for col23(từ in lớn)
 with col23:
 
    html_content5 = """
@@ -169,7 +177,7 @@ wordflick();
    custom_component = f"{css_styles}\n{html_content5}\n{javascript_code}"
    components.html(custom_component, height=500)
 
-col11, col22 = st.columns([3, 2],gap='large')
+# col11, col22 = st.columns([3, 2],gap='large')
 # with col11:
 #     with open("text-animation.css", "r") as file:
 #          css_code = file.read()
@@ -191,24 +199,18 @@ col11, col22 = st.columns([3, 2],gap='large')
 # Display the HTML content
     # st.markdown(html_content, unsafe_allow_html=True)
 
-# with col22:
-#     st.markdown("""
-#         <div style="display: flex; justify-content: center; position: fixed; bottom: 0px; right: 64px;">
-#             <img src="https://i.ibb.co/VHJXY5D/levtheguy-ai-brush-removebg-502gwv2h.png" style="max-width:90%; height:auto; transform: scaleX(-1);">
-#         </div>
-#     """, unsafe_allow_html=True)
 
 
 
 
 
 instagram_image_url = "https://www.karliky.com/instagram.7cafa855.svg"  
-# Replace with your Instagram logo URL
 instagram_image_url2 = "https://www.karliky.com/twitter.61c8a55c.svg"  
 
 # Instagram account URL
 instagram_account_url = "https://www.instagram.com/your_account/"  # Replace with your Instagram account URL
-
+instagram_account_url2 = "https://www.instagram.com/your_account/"  # Replace with your Instagram account URL
+#link acc
 st.markdown(
     f"""
     <style>
@@ -235,30 +237,8 @@ st.markdown(
         z-index: 9999;
     }}
     </style>
-    <a href="{instagram_account_url}" target="_blank" class="instagram-link2">
+    <a href="{instagram_account_url2}" target="_blank" class="instagram-link2">
         <img src="{instagram_image_url2}" style="width: 30px; height: auto;">
     </a>
     """,
-    unsafe_allow_html=True
-)
-# Render linked images
-# st.markdown(
-#     f"""
-#     <style>
-#     .instagram-link {{
-#         position: fixed;
-#         bottom: 50px;
-#         left: 86px;
-#         z-index: 9998;
-#     }}
-#     .instagram-link img {{
-#         margin-top: 10px;
-#     }}
-#     </style>
-#     <a href="{instagram_account_url}" target="_blank" class="instagram-link">
-#         <img src="{instagram_image_url}" style="width: 30px; height: auto;">
-#         <img src="{instagram_image_url2}" style="width: 30px; height: auto;">
-#     </a>
-#     """,
-#     unsafe_allow_html=True
-# )
+    unsafe_allow_html=True)

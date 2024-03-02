@@ -1,23 +1,16 @@
 import streamlit as st
 import base64
-import time
-import numpy
 from PIL import Image
-from streamlit_extras.buy_me_a_coffee import button
-from streamlit_extras.switch_page_button import switch_page
-from streamlit_extras.markdownlit import mdlit
+import streamlit as st
+import streamlit.components.v1 as components
+#layout for page
 st.set_page_config(
     page_title="Home",
     page_icon="👋",
-    layout= 'wide'
+    layout= 'wide',
+    initial_sidebar_state='collapsed'
 )
-
-#animation etc
-with open('wave.css') as f:
-    csss = f.read()
-st.markdown(f'<style>{csss}</style>', unsafe_allow_html=True)
-
-#ẩn header footer
+#hide header footer
 hide_streamlit_style = """
             <style>
             #MainMenu {visibility: hidden;}
@@ -26,55 +19,226 @@ hide_streamlit_style = """
             </style>
             """
 st.markdown(hide_streamlit_style, unsafe_allow_html=True) 
-
-#đặt logo cho page
+#reduce header height
+reduce_header_height_style = """
+    <style>
+        div.block-container {padding-top:0.0000000001rem;}
+    </style>
+"""
+st.markdown(reduce_header_height_style, unsafe_allow_html=True)
+#background
 st.markdown(
-        f"""
-            <style>
-                [data-testid="stSidebar"] {{
-                    background-image: url(https://khothietke.net/wp-content/uploads/2021/03/freepng1633-dieu-thuoc-la-khong-hut-thuoc-2.png);
-                    background-repeat: no-repeat;
-                    padding-top: 80px;
-                    background-position: 20px 20px;
-                    background-size: 115px 130px
-                }}
-            </style>
-            """,
-        unsafe_allow_html=True,
+         f"""
+         <style>
+         .stApp {{
+             background: url("https://i.ibb.co/2c5PF35/z5210644115108-99ed313083d7406016deded000186acd.jpg");
+             background-size: cover
+         }}
+         </style>
+         """,
+         unsafe_allow_html=True
+     )
+
+
+#columns
+col1, col23, col4,col5,col6 = st.columns([2,17,3,3,3])
+#set logo
+st.markdown(
+    """
+    <div style="position: fixed; top: 63px; left: 64px;">
+        <img src="https://khothietke.net/wp-content/uploads/2021/03/freepng1633-dieu-thuoc-la-khong-hut-thuoc-2.png" width="80">
+    </div>
+    """,
+    unsafe_allow_html=True
+)
+#for col 1
+with col1:
+    with open('wave.css') as css:
+        files = css.read()
+    st.markdown(f'<style>{files}</style>', unsafe_allow_html=True)
+    st.markdown(
+        """
+        <body>
+            <div class="patterns" style="width: 100%; height: 100vh; display: flex; justify-content: center; align-items: center;">
+                <svg width="100%" height="100%" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid meet">
+                  <defs>
+                    <style>
+                      @import url("https://fonts.googleapis.com/css2?family=EB+Garamond:wght@800&display=swap");
+                      text {
+                        font-family: "EB Garamond", serif !important;
+                        font-optical-sizing: auto;
+                        font-weight: 800;
+                        font-style: normal;
+                        font-size: 5rem;
+                        cursor: pointer;
+                        fill: #F55F5F; /* Adjust the fill color */
+                        transform: rotate(270deg); /* Rotate the text */
+                        transform-origin: center; /* Set rotation origin to center */
+                      }
+                    </style>
+                    <circle fill="#be9ddf" cx="25" cy="25" r="2"></circle>
+                  </defs>
+                  <text x="300" y="40%" text-anchor="middle">     Blog by Lev     </text>
+                </svg>
+              </div>
+            </body>
+        """,
+        unsafe_allow_html=True
     )
+#for col5
+with col5:
+    navigation_link = '<a id="about-link" class="navigation-link" href="/About-me" style="color: #EBE3D5;top: 63px; right: 400px;"><span style="color: #F55F5F;">&#8226;</span> about</a>'
+    st.markdown(navigation_link, unsafe_allow_html=True)
 
-# đặt banner
-image_path = 'https://i.ibb.co/xgxpWMf/B76-C7813-950-B-410-B-85-A2-E62-DEFC4-C805.png'
-html_str2 =  f"""
-<div style='width: 1080px; height: 200px;'>
-    <img src='{image_path}' alt='Blog Banner' style='width:100%; height:100%; object-fit: cover;'>
-</div>
+with col6:
+    navigation_link2 = '<a id="blog-link" class="navigation-link" href="/Blog" style="color: #EBE3D5;top: 63px; right: 275px;"><span style="color: #F55F5F;">&#8226;</span> blog</a>'
+    st.markdown(navigation_link2, unsafe_allow_html=True)
+
+navigation_link3 = '<a id="contact-link" class="navigation-link" href="/your-contact-page" style="color: #EBE3D5;top: 63px; right: 120px;"><span style="color: #F55F5F;">&#8226;</span> contact</a>'
+st.markdown(navigation_link3, unsafe_allow_html=True)
+
+
+
+# for col23(từ in lớn)
+with col23:
+
+   html_content5 = """
+<div class="word"></div>
 """
-st.markdown(html_str2, unsafe_allow_html=True)
 
-#đặt font
-with open( "style.css" ) as css:
-    st.markdown( f'<style>{css.read()}</style>' , unsafe_allow_html= True)
-html_str = """
-<h1 class="animated-text" style='font-size: 100px; text-align: center; color: #776B5D ;'>
-    BLOG BY LEV
-</h1>
+# Define the CSS styles
+   css_styles = """
+<style>
+html {
+  height: 100%;
+}
+
+.word {
+  margin: auto;
+  position:absolute;
+  top:250px;
+  left:80px;
+  color: black;
+  font: 700 normal 5em 'Eb Garamond';
+  text-shadow: 5px 2px #EBE3D5, 2px 4px #EBE3D5, 3px 5px #EBE3D5;
+}
+</style>
 """
-st.markdown(html_str, unsafe_allow_html=True)
 
-#phần dưới
-col1, col2 = st.columns([2, 2])
-col1.markdown('<h2 style="color: #344955;">About me</h2><hr style="border-top: 1px solid black; margin-top: 0.5em;">', unsafe_allow_html=True)
+# Define the JavaScript code
+   javascript_code = """
+<script>
+var words = ["Hi I'm Lev", "I'm from Europe", "I'm currently working in London"],
+    part,
+    i = 0,
+    offset = 0,
+    len = words.length,
+    forwards = true,
+    skip_count = 0,
+    skip_delay = 15,
+    speed = 70;
+var wordflick = function () {
+  setInterval(function () {
+    if (forwards) {
+      if (offset >= words[i].length) {
+        ++skip_count;
+        if (skip_count == skip_delay) {
+          forwards = false;
+          skip_count = 0;
+        }
+      }
+    }
+    else {
+      if (offset == 0) {
+        forwards = true;
+        i++;
+        offset = 0;
+        if (i >= len) {
+          i = 0;
+        }
+      }
+    }
+    part = words[i].substr(0, offset);
+    if (skip_count == 0) {
+      if (forwards) {
+        offset++;
+      }
+      else {
+        offset--;
+      }
+    }
+    document.querySelector('.word').innerText = part;
+  },speed);
+};
 
-#st.markdown("<h1 style='color: black;'><span style='color: black;font-style: italic;'>Blog</span> <span style='color: black;'>by</span> <span style='color: blue;'>lev</span> 😎</h1>", unsafe_allow_html=True)
+wordflick();
+</script>
+"""
+   custom_component = f"{css_styles}\n{html_content5}\n{javascript_code}"
+   components.html(custom_component, height=500)
 
-#_LOREM_IPSUM ='''Hello, I'm Lev. I'm on a journey, traveling from place to place, seeking something elusive yet essential. This blog will document my experiences and reflections along the way. Join me as I navigate through the twists and turns of life's unpredictable road.'''
-#def stream_data():
-#    for word in _LOREM_IPSUM.split():
-#        yield word + " "
-#        time.sleep(0.05)
-#st.write_stream(stream_data)
-_LOREM_IPSUM = '''<p><span style="color: black;">Hello, I'm Lev. I'm on a journey, traveling from place to place, seeking something elusive yet essential. This blog will document my experiences and reflections along the way. Join me as I navigate through the twists and turns of life's unpredictable road.</span></p>'''
-col1.markdown(_LOREM_IPSUM, unsafe_allow_html=True)
-col2.image('levtheguy.jpg',caption='This is me!',use_column_width=True )
-col1.page_link("pages/0_Blog_entries.py", label=":grey[→ Blog entries here]")
+# col11, col22 = st.columns([3, 2],gap='large')
+# with col11:
+#     with open("text-animation.css", "r") as file:
+#          css_code = file.read()
+#     st.markdown(f'<style>{css_code}</style>', unsafe_allow_html=True)
+#     html_content = """
+# <h2 style="color: #475058; position: fixed; top: 250px; left: 160px;">
+#   <span>Hi</span>
+#   <span>there👋</span>
+#   <span>I'm</span>
+#   <span>Lev!</span>
+#   <span>I'm</span>
+#   <span>from</span>
+#   <span>an</span>
+#   <span>Eastern</span><br>
+#   <span>European country</span>
+#   <span>country</span>
+# </h2>
+# """
+# Display the HTML content
+    # st.markdown(html_content, unsafe_allow_html=True)
+
+
+
+
+
+
+instagram_image_url = "https://www.karliky.com/instagram.7cafa855.svg"  
+instagram_image_url2 = "https://www.karliky.com/twitter.61c8a55c.svg"  
+
+# Instagram account URL
+instagram_account_url = "https://www.instagram.com/your_account/"  # Replace with your Instagram account URL
+instagram_account_url2 = "https://www.instagram.com/your_account/"  # Replace with your Instagram account URL
+#link acc
+st.markdown(
+    f"""
+    <style>
+    .instagram-link {{
+        position: fixed;
+        bottom: 50px;
+        left: 86px;
+        z-index: 9999;
+    }}
+    </style>
+    <a href="{instagram_account_url}" target="_blank" class="instagram-link">
+        <img src="{instagram_image_url}" style="width: 30px; height: auto;">
+    </a>
+    """,
+    unsafe_allow_html=True
+)
+st.markdown(
+    f"""
+    <style>
+    .instagram-link2 {{
+        position: fixed;
+        bottom: 100px;
+        left: 86px;
+        z-index: 9999;
+    }}
+    </style>
+    <a href="{instagram_account_url2}" target="_blank" class="instagram-link2">
+        <img src="{instagram_image_url2}" style="width: 30px; height: auto;">
+    </a>
+    """,
+    unsafe_allow_html=True)

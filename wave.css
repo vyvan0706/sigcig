@@ -33,7 +33,7 @@ body {
    font-size: 40px;
    stroke-width: 2;
   
-   animation: textAnimate 5s infinite alternate;
+   animation: textAnimate 3s infinite alternate;
    
  }
  
