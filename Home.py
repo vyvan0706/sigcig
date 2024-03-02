@@ -96,9 +96,6 @@ with col6:
 
 navigation_link3 = '<a id="contact-link" class="navigation-link" href="/your-contact-page" style="color: #EBE3D5;top: 63px; right: 120px;"><span style="color: #F55F5F;">&#8226;</span> contact</a>'
 st.markdown(navigation_link3, unsafe_allow_html=True)
-
-
-
 # for col23(từ in lớn)
 with col23:
 
