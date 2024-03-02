@@ -20,7 +20,14 @@ st.markdown(
             """,
         unsafe_allow_html=True,
     )
-
+image_path = 'https://i.ibb.co/NsRKnGR/99-F9-EFCE-60-DF-403-C-8199-FAB105-CDC089.png'
+# Define HTML with CSS styling to set the width
+html_str2 =  f"""
+<div style='width: 1080px; height: 200px;'>
+    <img src='{image_path}' alt='Blog Banner' style='width:100%; height:100%; object-fit: cover;'>
+</div>
+"""
+st.markdown(html_str2, unsafe_allow_html=True)
 t1,t2,t3,t4,t5,t6,t7=st.tabs(['Blog1','Blog2','Blog3','Blog4','Blog5','Blog6','Blog7'])
 with t1:
 

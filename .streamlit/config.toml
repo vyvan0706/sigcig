@@ -1,5 +1,7 @@
 [theme]
-primaryColor="#747264"
-backgroundColor="#C2C5AA"
-secondaryBackgroundColor="#2D6A4F"
-textColor="#FEFAE0"
+primaryColor="#747264"       
+backgroundColor="#2bc1e2"           
+secondaryBackgroundColor="#B0A695"   
+textColor="#EBE3D5"      
+[ui]
+hideTopBar = true
