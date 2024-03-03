@@ -11,16 +11,17 @@ st.set_page_config(
     layout= 'wide',
     initial_sidebar_state="collapsed"
 )
-st.markdown(
-    """
-<style>
-    [data-testid="collapsedControl"] {
-        display: none
-    }
-</style>
-""",
-    unsafe_allow_html=True,
-)
+st.markdown("""
+            <style>
+            [data-testid="stSidebar"] {
+                display: none
+            }
+
+            [data-testid="collapsedControl"] {
+                display: none
+            }
+            </style>
+            """, unsafe_allow_html=True)
 #hide header footer
 hide_streamlit_style = """
             <style>
