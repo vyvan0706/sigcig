@@ -234,8 +234,9 @@ instagram_image_url = "https://www.karliky.com/instagram.7cafa855.svg"
 instagram_image_url2 = "https://www.karliky.com/twitter.61c8a55c.svg"  
 
 # Instagram account URL
-instagram_account_url = "https://www.instagram.com/your_account/"  # Replace with your Instagram account URL
-instagram_account_url2 = "https://www.instagram.com/your_account/"  # Replace with your Instagram account URL
+
+instagram_account_url = "https://www.instagram.com/tunhaycuoi/"  
+instagram_account_url2 = "https://twitter.com/realDonaldTrump"  
 #link acc
 st.markdown(
     f"""

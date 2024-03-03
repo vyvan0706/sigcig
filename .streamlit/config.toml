@@ -1,7 +1,8 @@
 [theme]
 primaryColor="#747264"       
 backgroundColor="#43766C"           
-secondaryBackgroundColor="transparent"   
+secondaryBackgroundColor="grey"   
 textColor="#EBE3D5"      
 [ui]
 hideTopBar = true
+hideSidebarNav= true

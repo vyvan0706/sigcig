@@ -2,6 +2,7 @@ import streamlit as st
 import base64
 from PIL import Image
 import time
+import streamlit.components.v1 as components
 
 from streamlit_extras.stoggle import stoggle 
 st.set_page_config(
@@ -10,6 +11,20 @@ st.set_page_config(
     layout= 'wide',
     initial_sidebar_state="collapsed"
 )
+custom_scrollbar_css = """
+<style>
+/* Hide scrollbar */
+body*  {
+    overflow: hidden !important;
+}
+::-webkit-scrollbar {
+    display: none;
+}
+</style>
+"""
+
+# Render the CSS
+st.markdown(custom_scrollbar_css, unsafe_allow_html=True)
 st.markdown("""
             <style>
             [data-testid="stSidebar"] {
@@ -40,7 +55,7 @@ st.markdown(
          f"""
          <style>
          .stApp {{
-             background: url("https://i.ibb.co/0QM5dwk/z5212839788226-60ccf9d2215e9e2187e0cf9535d04290.jpg");
+             background: url("https://i.ibb.co/5L9yJX5/Screenshot-2024-03-04-002913.png");
              background-size: cover
          }}
          </style>
@@ -56,16 +71,8 @@ st.markdown(
     unsafe_allow_html=True
 )
 
-col1, col23, col4,col5,col6 = st.columns([2,17,3,3,3])
-#set logo
-st.markdown(
-    """
-    <div style="position: fixed; top: 63px; left: 64px;">
-        <img src="https://khothietke.net/wp-content/uploads/2021/03/freepng1633-dieu-thuoc-la-khong-hut-thuoc-2.png" width="80">
-    </div>
-    """,
-    unsafe_allow_html=True
-)
+col1, col2,col3, col4,col5,col6 = st.columns([2,13,5,2,2,3])
+
 #for col 1
 with col1:
     with open('wave.css') as css:
@@ -106,103 +113,81 @@ with col5:
     st.markdown(navigation_link, unsafe_allow_html=True)
 
 with col6:
-    navigation_link2 = '<a id="blog-link" class="navigation-link" href="/Blog" target="_self" style="color: #EBE3D5;top: 63px; right: 275px;"><span style="color: #F55F5F;">&#8226;</span> blog</a>'
+    navigation_link2 = '<a id="blog-link" class="navigation-link" href="/About_me" target="_self" style="color: #EBE3D5;top: 63px; right: 255px;"><span style="color: #F55F5F;">&#8226;</span> about</a>'
     st.markdown(navigation_link2, unsafe_allow_html=True)
 
-navigation_link3 = '<a id="contact-link" class="navigation-link" href="/your-contact-page" target="_self" style="color: #EBE3D5;top: 63px; right: 120px;"><span style="color: #F55F5F;">&#8226;</span> contact</a>'
+navigation_link3 = '<a id="contact-link" class="navigation-link" href="/Blog" target="_self" style="color: #EBE3D5;top: 63px; right: 120px;"><span style="color: #F55F5F;">&#8226;</span> blog</a>'
 st.markdown(navigation_link3, unsafe_allow_html=True)
-
-
+st.markdown(
+    """
+    <div style="position: fixed; top: 150px; left: 290px;">
+        <img src="https://i.ibb.co/3777gSb/z5213912693174-c1f7a8a2fac66b82fc6c99c7732aa857.jpg" width="350">
+    </div>
+    """,
+    unsafe_allow_html=True
+)
 st.markdown(
     """
     <h1 <span style="font-family: 'EB Garamond', serif;font-size: 80px;
-color: #EBE3D5; position: fixed; top: 80px; left: 350px;">About me</span><span style="color: #F55F5F;"> :</span></h1>
+color: #EBE3D5; position: fixed; top: 100px; right: 270px;">Contact me </span><span style="color: #F55F5F;"> :</span></h1>
     """ 
 , unsafe_allow_html=True)
-st.markdown("""
-<p style="color: #EBE3D5;font-size: 22px; position: fixed; top: 200px; left: 350px;right: 120px;">Nice to meet you here. I'm Lev.<br>
-Just hopped off a big old bus in London town. Exciting, right? <br> Well, kinda.
-<br> See, I'm here to find a job. My family back home needs some real <br> help with money , so I gotta step up and bring home the bacon. <br>
-London's a whole new world for me. Big buildings, lots of <br> people rushing around. But I'm ready to roll up my sleeves and <br> get to work. Gotta make that cash.
-Hopefully, I'll find something <br> soon and be able to send some money back home. That's the plan,<br> at least. 
-<br> So yeah, that's me. Just a guy from somewhere else, trying to  make <br> it work here in London.
-</p>""",unsafe_allow_html=True)
-# with col22:
-#     st.markdown(
-#     """
-#     <h1 <span style="color: #EBE3D5;">My interests</span><span style="color: #F55F5F;"> :</span></h1>
-#     """ 
-# , unsafe_allow_html=True)
-#     stoggle(
-#         "Click me!",
-#         """🥷 Surprise! Here's some additional content""",
-#     )
-with open("text-animation.css", "r") as file:
-    css_code = file.read()
+st.markdown(
+    """
+    <p <span style="font-family: 'EB Garamond', serif;font-size: 30px;
+color: #EBE3D5; position: fixed; top: 300px; right: 250px;">Contact </span></p>
+    """ 
+, unsafe_allow_html=True)
+st.markdown(
+    """
+    <p <span style="font-family: 'EB Garamond', serif;font-size: 25px;
+color: #EBE3D5; position: fixed; top: 350px; right:53px;">levgobigorgohome@blog.com </span></p>
+    """ 
+, unsafe_allow_html=True)
+with col3: 
+# Define form fields
+   st.write('')
+   st.write('')
+   st.write('')
+   st.write('')
+   st.write('')
+   st.write('')
+   st.write('')
+   st.write('')
+   st.write('')
+   st.write('')
+   st.write('')
+   st.write('')
+   st.write('')
+   st.write('')
 
-# Display CSS animation code
-st.markdown(f'<style>{css_code}</style>', unsafe_allow_html=True)
+   name = st.text_input("Name")
+   email = st.text_input("Email")
+   message = st.text_area("Message")
 
-# Image URL
-# image_url = "https://i.ibb.co/RD2bK96/Screenshot-2024-03-03-122415.png"
+# Render the submit button
+   submit_clicked = st.button("Submit")
 
-# # Markdown string for the image with fixed positioning
-# image_markdown = f'<div style="position: fixed; bottom: 130px; right: 100px;">' \
-#                  f'<img src="{image_url}" alt="Screenshot" width="400px">' \
-#                  f'</div>'
-
-# Markdown string for the text with fixed positioning
-text_markdown = f"""<h1 style="
-                    font-family: 'EB Garamond', serif;
-                    font-optical-sizing: auto;
-                    font-weight: 300;
-                    font-style: italic;
-                    font-size: 60px;
-                    color: #F55F5F; 
-                    position: fixed; 
-                    bottom: 190px; 
-                    right: 180px;
-                    "> \
-                <span style="color: #F55F5F;">If</span> \
-                <span>only</span> \
-                <span>we</span><br> \
-                <span>were</span> \
-                <span>stork</span> \
-                </h1>"""
-
-# Display the markdown for the image and text
-# st.markdown(image_markdown, unsafe_allow_html=True)
-st.markdown(text_markdown, unsafe_allow_html=True)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+# If submit button is clicked, display submission message
+   if submit_clicked:
+      st.success("Thanks for contacting me!")
 
 
 instagram_image_url = "https://www.karliky.com/instagram.7cafa855.svg"  
 instagram_image_url2 = "https://www.karliky.com/twitter.61c8a55c.svg"  
 
 # Instagram account URL
+
 instagram_account_url = "https://www.instagram.com/tunhaycuoi/"  
-instagram_account_url2 = "https://twitter.com/realDonaldTrump"  
+instagram_account_url2 = "https://twitter.com/realDonaldTrump"    # Replace with your Instagram account URL
 #link acc
 st.markdown(
     f"""
     <style>
     .instagram-link {{
         position: fixed;
-        bottom: 50px;
-        left: 86px;
+        bottom: 260px;
+        right : 310px;
         z-index: 9999;
     }}
     </style>
@@ -217,8 +202,8 @@ st.markdown(
     <style>
     .instagram-link2 {{
         position: fixed;
-        bottom: 100px;
-        left: 86px;
+        bottom: 263px;
+        right : 260px;
         z-index: 9999;
     }}
     </style>
