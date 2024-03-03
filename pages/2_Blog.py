@@ -215,7 +215,7 @@ st.markdown(
         <div class="image-container">
             <div class="image-box">
                 <a href="/Moving_Forward" target="_self">
-                    <img src="https://cdn1.epicgames.com/ue/product/Screenshot/Sawmill---closed-area0017HighresScreenshot00006-1920x1080-a45dae7a6b9a9ccf89738e60ac0ca739.png?resize=1&w=1920" alt="workplace closure">
+                    <img src="https://recruitment-agency.london/wp-content/uploads/2023/12/Kitchen-Porter-Agency-London.jpg" alt="workplace closure">
                 </a>
                 <div class="image-title">
                     <a href="/Moving_Forward" target="_self">Moving Forward</a>
