@@ -1,21 +1,12 @@
-/* .stApp > header {
-    background-color: transparent;
-}
 
-.stApp {
-    background: linear-gradient(45deg, #3a5683 10%, #0E1117 45%, #0E1117 55%, #3a5683 90%);
-    animation: my_animation 5s ease infinite;
-    background-size: 200% 200%;
-    background-attachment: fixed;
-} */
 @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swapp');
 
 [class^="st-emotion-cache-5ktc4g e1nzilvr5"]{
     margin: 0;
     font-family: 'EB Garamond', serif; 
+    color:#EBE3D5
 }
 body {
-    background-color: #2bc1e2;
     margin:0;
  }
  

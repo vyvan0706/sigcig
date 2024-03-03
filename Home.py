@@ -3,12 +3,24 @@ import base64
 from PIL import Image
 import streamlit as st
 import streamlit.components.v1 as components
+import time
+
 #layout for page
 st.set_page_config(
     page_title="Home",
     page_icon="👋",
     layout= 'wide',
-    initial_sidebar_state='collapsed'
+    initial_sidebar_state="collapsed"
+)
+st.markdown(
+    """
+<style>
+    [data-testid="collapsedControl"] {
+        display: none
+    }
+</style>
+""",
+    unsafe_allow_html=True,
 )
 #hide header footer
 hide_streamlit_style = """
@@ -31,7 +43,7 @@ st.markdown(
          f"""
          <style>
          .stApp {{
-             background: url("https://i.ibb.co/2c5PF35/z5210644115108-99ed313083d7406016deded000186acd.jpg");
+             background: url("https://i.ibb.co/0FV0J2s/Helo-b-d-3.png");
              background-size: cover
          }}
          </style>
@@ -87,14 +99,14 @@ with col1:
     )
 #for col5
 with col5:
-    navigation_link = '<a id="about-link" class="navigation-link" href="/About-me" style="color: #EBE3D5;top: 63px; right: 400px;"><span style="color: #F55F5F;">&#8226;</span> about</a>'
+    navigation_link = '<a id="about-link" class="navigation-link" href="/About_me" target="_self" style="color: #EBE3D5;top: 63px; right: 400px;"><span style="color: #F55F5F;">&#8226;</span> about</a>'
     st.markdown(navigation_link, unsafe_allow_html=True)
 
 with col6:
-    navigation_link2 = '<a id="blog-link" class="navigation-link" href="/Blog" style="color: #EBE3D5;top: 63px; right: 275px;"><span style="color: #F55F5F;">&#8226;</span> blog</a>'
+    navigation_link2 = '<a id="blog-link" class="navigation-link" href="/Blog" target="_self" style="color: #EBE3D5;top: 63px; right: 275px;"><span style="color: #F55F5F;">&#8226;</span> blog</a>'
     st.markdown(navigation_link2, unsafe_allow_html=True)
 
-navigation_link3 = '<a id="contact-link" class="navigation-link" href="/your-contact-page" style="color: #EBE3D5;top: 63px; right: 120px;"><span style="color: #F55F5F;">&#8226;</span> contact</a>'
+navigation_link3 = '<a id="contact-link" class="navigation-link" href="/your-contact-page" target="_self" style="color: #EBE3D5;top: 63px; right: 120px;"><span style="color: #F55F5F;">&#8226;</span> contact</a>'
 st.markdown(navigation_link3, unsafe_allow_html=True)
 # for col23(từ in lớn)
 with col23:
@@ -173,31 +185,6 @@ wordflick();
 """
    custom_component = f"{css_styles}\n{html_content5}\n{javascript_code}"
    components.html(custom_component, height=500)
-
-# col11, col22 = st.columns([3, 2],gap='large')
-# with col11:
-#     with open("text-animation.css", "r") as file:
-#          css_code = file.read()
-#     st.markdown(f'<style>{css_code}</style>', unsafe_allow_html=True)
-#     html_content = """
-# <h2 style="color: #475058; position: fixed; top: 250px; left: 160px;">
-#   <span>Hi</span>
-#   <span>there👋</span>
-#   <span>I'm</span>
-#   <span>Lev!</span>
-#   <span>I'm</span>
-#   <span>from</span>
-#   <span>an</span>
-#   <span>Eastern</span><br>
-#   <span>European country</span>
-#   <span>country</span>
-# </h2>
-# """
-# Display the HTML content
-    # st.markdown(html_content, unsafe_allow_html=True)
-
-
-
 
 
 
