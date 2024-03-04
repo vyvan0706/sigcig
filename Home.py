@@ -23,21 +23,21 @@ st.markdown(
     unsafe_allow_html=True,
 )
 #hide header footer
-hide_streamlit_style = """
-            <style>
-            #MainMenu {visibility: hidden;}
-            footer {visibility: hidden;}
-            header {visibility: hidden;}
-            </style>
-            """
-st.markdown(hide_streamlit_style, unsafe_allow_html=True) 
-#reduce header height
-reduce_header_height_style = """
-    <style>
-        div.block-container {padding-top:0.0000000001rem;}
-    </style>
-"""
-st.markdown(reduce_header_height_style, unsafe_allow_html=True)
+# hide_streamlit_style = """
+#             <style>
+#             #MainMenu {visibility: hidden;}
+#             footer {visibility: hidden;}
+#             header {visibility: hidden;}
+#             </style>
+# #             """
+# st.markdown(hide_streamlit_style, unsafe_allow_html=True) 
+# #reduce header height
+# reduce_header_height_style = """
+#     <style>
+#         div.block-container {padding-top:0.0000000001rem;}
+#     </style>
+# """
+# st.markdown(reduce_header_height_style, unsafe_allow_html=True)
 #background
 st.markdown(
          f"""
@@ -184,6 +184,7 @@ wordflick();
 </script>
 """
    custom_component = f"{css_styles}\n{html_content5}\n{javascript_code}"
+   st.markdown(f"<style>{css_styles}</style>",unsafe_allow_html=True)
    components.html(custom_component, height=500)
 
 
